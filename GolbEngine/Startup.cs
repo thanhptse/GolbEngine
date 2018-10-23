@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using GolbEngine.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using GolbEngine.Data.EntityFramework;
 
 namespace GolbEngine
 {
@@ -39,6 +40,8 @@ namespace GolbEngine
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddTransient<DbInitializer>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
