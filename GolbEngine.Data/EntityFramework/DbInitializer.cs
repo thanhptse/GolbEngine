@@ -48,6 +48,21 @@ namespace GolbEngine.Data.EntityFramework
                 await _userManager.AddToRoleAsync(user, "Admin");
             }
 
+            if (!_context.Blogs.Any() && !_context.Tags.Any() && !_context.Categories.Any())
+            {
+                Category categoryTest = new Category { Name = "Test Category", Description = "For testing only"};
+
+                Tag tagTest = new Tag { Name = "test" };
+
+                Blog blog1 = new Blog { Title = "Demo 1", Content = "Hello", Status = Status.Active, Category = categoryTest };
+                Blog blog2 = new Blog { Title = "Demo 2", Content = "Hello", Status = Status.Active, Category = categoryTest };
+
+                _context.Categories.AddRange(categoryTest);
+                _context.Tags.AddRange(tagTest);
+                _context.Blogs.AddRange(blog1, blog2);
+
+            }
+
             await _context.SaveChangesAsync();
         }
     }

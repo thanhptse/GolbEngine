@@ -17,6 +17,22 @@ namespace GolbEngine.Data.Entities
         public DateTime DateModified { get; set; }
         public Status Status { get; set; }
         public bool IsDeleted { get; set; }
+        public int CategoryId { get; set; }
+
+        [ForeignKey("CategoryId")]
         public virtual Category Category { get; set; }
+
+        public Blog()
+        {
+
+        }
+
+        public Blog(string title, string content, Status status, int categoryId)
+        {
+            Title = title;
+            Content = content;
+            Status = status;
+            CategoryId = categoryId;
+        }
     }
 }
