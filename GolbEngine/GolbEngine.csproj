@@ -21,8 +21,19 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Components\" />
-    <Folder Include="Areas\Admin\Views\" />
     <Folder Include="Logs\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Middleware\" />
+    <Folder Include="Services\" />
+    <Folder Include="wwwroot\admin-side\images\" />
+    <Folder Include="wwwroot\app\controllers\home\" />
+    <Folder Include="wwwroot\app\controllers\blog\" />
+    <Folder Include="wwwroot\client-app\controllers\" />
+    <Folder Include="wwwroot\client-side\css\" />
+    <Folder Include="wwwroot\client-side\js\" />
+    <Folder Include="wwwroot\client-side\fonts\" />
+    <Folder Include="wwwroot\client-side\images\" />
+    <Folder Include="wwwroot\bundled\" />
   </ItemGroup>
 
 </Project>

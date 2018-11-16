@@ -1,17 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2024
+VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GolbEngine", "GolbEngine\GolbEngine.csproj", "{45FC3727-36A3-4D3A-967D-196A83FD613E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GolbEngine.Application", "GolbEngine.Application\GolbEngine.Application.csproj", "{75060F48-4942-4E53-A8E4-65E89B9372F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GolbEngine.Application", "GolbEngine.Application\GolbEngine.Application.csproj", "{75060F48-4942-4E53-A8E4-65E89B9372F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GolbEngine.Data", "GolbEngine.Data\GolbEngine.Data.csproj", "{3E465780-836E-4D08-888D-7FA216653238}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GolbEngine.Data", "GolbEngine.Data\GolbEngine.Data.csproj", "{3E465780-836E-4D08-888D-7FA216653238}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GolbEngine.Infrastructure", "GolbEngine.Infrastructure\GolbEngine.Infrastructure.csproj", "{63C2475D-1D96-4105-9C71-FAD62D5300E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GolbEngine.Infrastructure", "GolbEngine.Infrastructure\GolbEngine.Infrastructure.csproj", "{63C2475D-1D96-4105-9C71-FAD62D5300E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GolbEngine.Utilities", "GolbEngine.Utilities\GolbEngine.Utilities.csproj", "{44D2BA12-047B-4C64-A0C6-5904ECAD4824}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GolbEngine.Utilities", "GolbEngine.Utilities\GolbEngine.Utilities.csproj", "{44D2BA12-047B-4C64-A0C6-5904ECAD4824}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

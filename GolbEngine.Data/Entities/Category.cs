@@ -16,6 +16,7 @@ namespace GolbEngine.Data.Entities
         public bool IsDeleted { get; set; }
         public DateTime DateCreated { get; set; }
         public DateTime DateModified { get; set; }
+
         public virtual ICollection<Blog> Blogs { get; set; }
     }
 }
