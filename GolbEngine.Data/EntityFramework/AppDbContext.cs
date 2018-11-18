@@ -21,13 +21,14 @@ namespace GolbEngine.Data.EntityFramework
         }
 
         public DbSet<Blog> Blogs { get; set; }
-        public DbSet<BlogTag> BlogTag { get; set; }
+        public DbSet<BlogTag> BlogTags { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Tag> Tags { get; set; }
+        public DbSet<Function> Functions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-             builder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaims").HasKey(x => x.Id);
+            builder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaims").HasKey(x => x.Id);
 
             builder.Entity<IdentityRoleClaim<Guid>>().ToTable("AppRoleClaims")
                 .HasKey(x => x.Id);

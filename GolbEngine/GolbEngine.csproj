@@ -3,12 +3,16 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <UserSecretsId>aspnet-GolbEngine-CEA9C730-1B19-4B56-B808-080FF0565378</UserSecretsId>
+    <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.Net.Compilers" Version="2.8.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.4" PrivateAssets="All" />
+    <PackageReference Include="Serilog.Extensions.Logging.File" Version="1.1.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,14 +23,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Controllers\" />
-    <Folder Include="Areas\Admin\Components\" />
+    <Folder Include="Areas\Admin\Views\User\" />
     <Folder Include="Logs\" />
-    <Folder Include="Extensions\" />
     <Folder Include="Middleware\" />
     <Folder Include="Services\" />
     <Folder Include="wwwroot\admin-side\images\" />
-    <Folder Include="wwwroot\app\controllers\home\" />
     <Folder Include="wwwroot\app\controllers\blog\" />
     <Folder Include="wwwroot\client-app\controllers\" />
     <Folder Include="wwwroot\client-side\css\" />

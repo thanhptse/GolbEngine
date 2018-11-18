@@ -33,6 +33,8 @@ namespace GolbEngine
                     logger.LogError(ex, "An error occurred while seeding the database");
                 }
             }
+
+            host.Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

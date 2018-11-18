@@ -1,75 +1,111 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - GolbEngine</title>
+    <!-- Basic page needs -->
+    <meta charset="utf-8">
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <![endif]-->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>@ViewData["Title"]</title>
+    <meta name="description" content="@ViewData["MetaKeyword"]">
+    <meta name="keywords" content="@ViewData["MetaDescription"]" />
 
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
+    <!-- Mobile specific metas  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicons Icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="#">
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="~/client-side/css/style.css">
 </head>
+
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">GolbEngine</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
-                <partial name="_LoginPartial" />
-            </div>
+    <header id="header">
+        <div id="logo">
+            <h1><a href="#">Lập trình cuộc sống</a></h1>
         </div>
-    </nav>
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Khóa học</a></li>
+            <li><a href="#">Bài viết hay</a></li>
+            <li><a href="#">Tác giả</a></li>
+            <li><a target="_blank" href="#">Fan page</a></li>
+            <li><a target="_blank" href="#">Youtube</a></li>
+        </ul>
+        <div class="clear"></div>
+    </header>
 
-    <partial name="_CookieConsentPartial" />
+    @RenderBody()
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2018 - GolbEngine</p>
+    <div id="footer-outer">
+        <footer id="footer" class="container">
+            <div class="box">
+                <h4>Theo dõi blog</h4>
+                <ul>
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a target="_blank" href="#">Chúng tôi trên Facebook</a></li>
+                    <li><a target="_blank" href="#">Chúng tôi trên Youtube</a></li>
+                    <li><a target="_blank" href="#">Yêu cầu viết bài</a></li>
+
+                </ul>
+            </div>
+            <div class="box">
+                <h4>Link hữu ích</h4>
+                <ul>
+                    <li><a href="#">Giới thiệu blog</a></li>
+                    <li><a href="#">Bài viết hay</a></li>
+                    <li><a href="#">Điều khoản</a></li>
+                    <li><a target="_blank" href="#">Website Tác giả</a></li>
+                </ul>
+            </div>
+            <div class="box">
+                <h4>Blog bạn bè</h4>
+                <ul>
+                    <li><a target="_blank" href="#">Tôi đi code dạo</a></li>
+                    <li><a target="_blank" href="#">Niviki.com</a></li>
+                    <li><a target="_blank" href="#">Giaosucan's Blog</a></li>
+                    <li><a target="_blank" href="#">The Lazy Dev</a></li>
+                </ul>
+            </div>
+            <div class="box">
+                <h4>Kết nối</h4>
+                <ul>
+                    <li><a target="_blank" href="#">Website Tác giả</a></li>
+                    <li><a target="_blank" href="#">Tôi trên Twitter</a></li>
+                    <li><a target="_blank" href="#">Tôi trên Google plus</a></li>
+                    <li><a target="_blank" href="#">Tôi trên Instagram</a></li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+            <div class="tag_cloud">
+                <h4>Tags</h4>
+                <a href="#">Hacking cơ bản</a>,
+                <a href="#">Học hack cơ bản</a>,
+                <a href="#">Học ubuntu</a>,
+                <a href="#">Lập trình game javascript</a>,
+                <a href="#">Lập trình javascript</a>,
+                <a href="#">Lập trình game đơn giản</a>,
+                <a href="#">Tự học linux</a>,
+                <a href="#">Jquery</a>,
+                <a href="#">Kinh nghiệm phỏng vấn</a>,
+                <a href="#">Lập trình php</a>,
+                <a href="#">Lập trình web</a>,
+                <a href="#">Live stream lập trình</a>,
+                <a href="#">Cách trở thành hacker mũ đen</a>,
+                <a href="#">Dạy làm hacker từ A đến Z</a>,
+                <a href="#">Đời sống lập trình viên</a>,
+                <a href="#">Ngành lập trình viên</a>,
+                <a href="#">Cách lập trình game</a>,
+                <a href="#">Bí quyết học lập trình</a>,
+                <a href="#">Những điều cơ bản về lập trình</a>,
+                <a href="#">Lập trình viên</a>,
+                <a href="#">Nghề lập trình viên hiện nay</a>,
+                <a href="#">Cách học lập trình cho người chưa biết gì</a>,
+                <a href="#">học lập trình như thế nào</a>,
+            </div>
         </footer>
     </div>
-
-    <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
-
-    @RenderSection("Scripts", required: false)
 </body>
+
 </html>

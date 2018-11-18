@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20181118172144_initial.cs" />
+    <Compile Remove="Migrations\20181118173839_initial_4.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="EntityFramework\Configurations\" />
     <Folder Include="EntityFramework\Extensions\" />
     <Folder Include="EntityFramework\Migrations\" />

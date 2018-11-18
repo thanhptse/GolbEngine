@@ -10,5 +10,6 @@ namespace GolbEngine.Data.Entities
     public class Tag : DomainEntity<int>
     {
         public string Name { get; set; }
+        public ICollection<BlogTag> BlogTags { get; } = new List<BlogTag>();
     }
 }

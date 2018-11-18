@@ -1,94 +1,184 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <img src="~/images/banner1.svg" alt="ASP.NET" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    Learn how to build ASP.NET apps that can run anywhere.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525028&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="~/images/banner2.svg" alt="Visual Studio" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    There are powerful new features in Visual Studio for building modern web apps.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525030&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="~/images/banner3.svg" alt="Microsoft Azure" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    Learn how Microsoft's Azure cloud platform allows you to build, deploy, and scale web apps.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525027&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-    </div>
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
+﻿<div id="jumbotron">
+    <h1><a href="#">Lập trình cuộc sống</a></h1>
+    <h2>Chỉ là blog của một thằng coder</h2>
+    <nav id="categories">
+        <ul>
+            <li><a href="#">Video trên youtube</a></li>
+            <li><a href="#">Chuyện nghề nghiệp</a></li>
+            <li><a href="#">Chuyện lập trình</a></li>
+            <li><a href="#">Chuyện bên lề</a></li>
+            <li><a href="#">Chuyện cuộc sống</a></li>
+            <li><a href="#">Linux - ubuntu</a></li>
+        </ul>
+    </nav>
 </div>
 
-<div class="row">
-    <div class="col-md-3">
-        <h2>Application uses</h2>
-        <ul>
-            <li>Sample pages using ASP.NET Core MVC</li>
-            <li>Theming using <a href="https://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>
-        </ul>
+<section id="content">
+    <article class="post" itemscope="" itemtype="http://schema.org/Article">
+        <h1 itemprop="name"><a itemprop="url" href="#">Apache trên centos không có quyền ghi file, dù đã chmod 777</a></h1>
+
+        <a href="#"><img itemprop="image" src="~/client-side/images/thumbnail_default.png" alt="Apache trên centos không có quyền ghi file, dù đã chmod 777" class="post_thumbnail"></a>
+
+        <div class="excerpt" itemprop="description">
+            SELinux (Security-Enhanced Linux) dùng để khóa điều khiển truy cập vào các ứng dụng, tăng bảo mật, nhưng cũng có một vài điều gây khó chịu cho người sử dụng như việc gây chậm cho hệ thống hay khiến cho một vài ứng dụng trở nên khó cài đặt.
+        </div>
+        <div class="clear"></div>
+    </article>
+    <article class="post" itemscope="" itemtype="http://schema.org/Article">
+        <h1 itemprop="name"><a itemprop="url" href="#">3 việc lập trình viên cần làm mỗi ngày</a></h1>
+
+        <a href="#"><img itemprop="image" src="~/client-side/images/work.png" title="3 việc lập trình viên cần làm mỗi ngày" alt="3 việc lập trình viên cần làm mỗi ngày" class="post_thumbnail"></a>
+
+        <div class="excerpt" itemprop="description">
+            Tôi tin rằng sự thành công của một người trong tương lai phụ thuộc vào những việc mà hàng ngày anh ta làm. Tôi thấy có người rảnh rỗi xem phim lướt facebook và băn khoăn làm thế nào để trở thành developer giỏi. Và cũng thấy những người suốt ngày bận bịu làm hết việc này đến việc khác nhưng vẫn không đi đến đâu.
+        </div>
+        <div class="clear"></div>
+    </article>
+    <article class="post" itemscope="" itemtype="http://schema.org/Article">
+        <h1 itemprop="name"><a itemprop="url" href="#">Viết cho sinh viên IT</a></h1>
+
+        <a href="#"><img itemprop="image" src="~/client-side/images/web-developer.png" title="Viết cho sinh viên IT" alt="Viết cho sinh viên IT" class="post_thumbnail"></a>
+
+        <div class="excerpt" itemprop="description">
+            Rồi ngày mai cuộc sống sẽ cuốn các bạn đi, code của các bạn sẽ không còn là những dòng code đầy đam mê như trước nữa, mà code của bạn phải làm ra tiền. Tôi nói thật đấy, bạn sẽ phải trả tiền phòng, tiền điện nước, internet, code của bạn trước khi làm thỏa mãn đam mê, thì trước hết nó phải đáp ứng được tầng thấp nhất của tháp nhu cầu Maslow cái đã.
+        </div>
+        <div class="clear"></div>
+    </article>
+    <article class="post" itemscope="" itemtype="http://schema.org/Article">
+        <h1 itemprop="name"><a itemprop="url" href="#">Review các IT blogger khét tiếng ở Việt Nam</a></h1>
+
+        <a href="#"><img itemprop="image" src="~/client-side/images/blog-thumb.png" title="Review các IT blogger khét tiếng ở Việt Nam" alt="Review các IT blogger khét tiếng ở Việt Nam" class="post_thumbnail"></a>
+
+        <div class="excerpt" itemprop="description">
+            <p>Cũng như các bạn, ngoài code với FAP ra thì thời gian rảnh mình cũng hay la cà mấy blog IT, hóng hớt xem thiên hạ đang code như thế nào, bàn tán về công nghệ gì. Trong bài viết này mình sẽ giới thiệu các blog IT <del>nổi tiếng</del> khét tiếng ở Việt Nam mà mình thường xuyên ghé thăm.</p>
+
+        </div>
+        <div class="clear"></div>
+    </article>
+    <article class="post" itemscope="" itemtype="http://schema.org/Article">
+        <h1 itemprop="name"><a itemprop="url" href="#">Làm app android chỉ bằng html, css và javascript thuần, phần một - Viết code javascript</a></h1>
+
+        <a href="#"><img itemprop="image" src="~/client-side/images/mobile-app.png" title="Làm app android chỉ bằng html, css và javascript thuần, phần một - Viết code javascript" alt="Làm app android chỉ bằng html, css và javascript thuần, phần một - Viết code javascript" class="post_thumbnail"></a>
+
+        <div class="excerpt" itemprop="description">
+            <p>Trong sê-ri này mình sẽ cùng các bạn xây dựng một ứng dụng android chỉ bằng html, css và javascript. Hiện nay có rất nhiều framework javascript giúp phát triển ứng dụng nhanh hơn, tuy nhiên chúng ta sẽ cùng trở lại với javascript thuần, bắt đầu từ con số không cho đến khi app của chúng ta lên Play Store.</p>
+
+        </div>
+        <div class="clear"></div>
+    </article>
+    <article class="post" itemscope="" itemtype="http://schema.org/Article">
+        <h1 itemprop="name"><a itemprop="url" href="#">Mình đã học lập trình như thế nào?</a></h1>
+
+        <a href="#"><img itemprop="image" src="~/client-side/images/thanh-cong.png" title="Mình đã học lập trình như thế nào?" alt="Mình đã học lập trình như thế nào?" class="post_thumbnail"></a>
+
+        <div class="excerpt" itemprop="description">
+            Mình đã học lập trình như thế nào? Trong video này, mình chia sẻ về quãng thời gian đã học lập trình của mình từ thời cấp 3 đến lúc trở thành lập trình viên. Mỗi người có một con đường khác, cuộc sống không có ai giống ai cả, nhưng rồi cuối cùng chúng ta gặp nhau ở đây, tôi gặp bạn, những người có cùng niềm đam mê
+        </div>
+        <div class="clear"></div>
+    </article>
+    <article class="post" itemscope="" itemtype="http://schema.org/Article">
+        <h1 itemprop="name"><a itemprop="url" href="#">Bình loạn về thuật toán in ra các số chẵn trong khoảng từ 1 đến 100</a></h1>
+
+        <a href="#"><img itemprop="image" src="~/client-side/images/programming-thumb.png" title="Bình loạn về thuật toán in ra các số chẵn trong khoảng từ 1 đến 100" alt="Bình loạn về thuật toán in ra các số chẵn trong khoảng từ 1 đến 100" class="post_thumbnail"></a>
+
+        <div class="excerpt" itemprop="description">
+            <p>Hãy viết chương trình in ra các số chẵn trong khoảng từ 1 đến 100. Đây là một bài tập rất cơ bản với những người mới học lập trình, nó không hề khó, thậm chí dễ như ăn kẹo.</p>
+
+        </div>
+        <div class="clear"></div>
+    </article>
+    <article class="post" itemscope="" itemtype="http://schema.org/Article">
+        <h1 itemprop="name"><a itemprop="url" href="#">Lập trình viên 10 tiếng</a></h1>
+
+        <a href="#"><img itemprop="image" src="~/client-side/images/lap-trinh-vien-thumb.jpg" title="Lập trình viên 10 tiếng" alt="Lập trình viên 10 tiếng" class="post_thumbnail"></a>
+
+        <div class="excerpt" itemprop="description">
+            Là một lập trình viên, chắc hẳn bạn cũng có những ý tưởng phần mềm hay, hữu ích muốn làm. Bạn hăm hở háo hức làm một cách say mê, mong muốn ý tưởng nhanh chóng trở thành hiện thực. Thế rồi bạn không đủ thời gian, được dăm bữa nửa tháng, chán rồi vứt xó.
+        </div>
+        <div class="clear"></div>
+    </article>
+    <article class="post" itemscope="" itemtype="http://schema.org/Article">
+        <h1 itemprop="name"><a itemprop="url" href="#">Học linux để làm gì? Học thế nào cho hiệu quả?</a></h1>
+
+        <a href="#"><img itemprop="image" src="~/client-side/images/linux-thumb.png" title="Học linux để làm gì? Học thế nào cho hiệu quả?" alt="Học linux để làm gì? Học thế nào cho hiệu quả?" class="post_thumbnail"></a>
+
+        <div class="excerpt" itemprop="description">
+            <p>Chắc hẳn các bạn ở đây đã nghe đến hoặc đã từng sử dụng linux, vậy học linux để làm gì ? Nó có thật sự cần cho lập trình viên hay không? Làm thế nào để chuyển sang linux hiệu quả nhất. Trong bài viết này, mình sẽ nói về quá trình mình đến với linux, lý do vì sao chúng ta phải học linux.</p>
+
+        </div>
+        <div class="clear"></div>
+    </article>
+    <article class="post" itemscope="" itemtype="http://schema.org/Article">
+        <h1 itemprop="name"><a itemprop="url" href="#">Thiền đã cứu rỗi linh hồn tôi như thế nào?</a></h1>
+
+        <a href="#"><img itemprop="image" src="~/client-side/images/thien.jpg" title="Thiền đã cứu rỗi linh hồn tôi như thế nào?" alt="Thiền đã cứu rỗi linh hồn tôi như thế nào?" class="post_thumbnail"></a>
+
+        <div class="excerpt" itemprop="description">
+            Ban đầu mình cũng không tin thiền có tác dụng gì lắm, cũng không hiểu nguyên tắc hoạt động của nó thế nào. Nhưng khi đã thử qua, mình không ngờ rằng nó lại có nhiều tác dụng tích cực đến thế, nên quyết định chia sẻ đến các bạn trải nghiệm này.
+        </div>
+        <div class="clear"></div>
+    </article>
+    <article class="post" itemscope="" itemtype="http://schema.org/Article">
+        <h1 itemprop="name"><a itemprop="url" href="#">Share mã giảm giá sự kiện Việt Nam mobile day 2018</a></h1>
+
+        <a href="#"><img itemprop="image" src="~/client-side/images/mobile.png" title="Share mã giảm giá sự kiện Việt Nam mobile day 2018" alt="Share mã giảm giá sự kiện Việt Nam mobile day 2018" class="post_thumbnail"></a>
+
+        <div class="excerpt" itemprop="description">
+            <p>Vietnam Mobile Day là ngày hội thường niên lớn nhất trong lĩnh vực ứng dụng di động, cập nhật những kiến thức mới, chuyên sâu từ các diễn giả được chọn lọc mời từ các công ty internet tiên phong, đối tượng tham dự đa dạng từ developer, marketer, designer và doanh nhân. Ban tổ chức cũng đã có vé mời <a href="#">Lập Trình Cuộc Sống</a> tham dự và share 15 code giảm 50k/vé cho các bạn.</p>
+
+        </div>
+        <div class="clear"></div>
+    </article>
+    <article class="post" itemscope="" itemtype="http://schema.org/Article">
+        <h1 itemprop="name"><a itemprop="url" href="#">Giải thích và hướng dẫn cài đặt Gitlab Continuous Deployment một cách dễ hiểu nhất</a></h1>
+
+        <a href="#"><img itemprop="image" src="~/client-side/images/gitlab-ci-thumb.png" title="Giải thích và hướng dẫn cài đặt Gitlab Continuous Deployment một cách dễ hiểu nhất" alt="Giải thích và hướng dẫn cài đặt Gitlab Continuous Deployment một cách dễ hiểu nhất" class="post_thumbnail"></a>
+
+        <div class="excerpt" itemprop="description">
+            <p>Có lẽ bạn đã từng nghe ở đâu đó về continuous integration (CI - tích hợp liên tục) và continuous deployment (CD - triển khai liên tục). Trong bài viết này mình sẽ cố gằng giải thích và hướng dẫn các bạn cài đặt sử dụng Gitlab CI, CD một cách dễ hiểu nhất.</p>
+
+        </div>
+        <div class="clear"></div>
+    </article>
+    <article class="post" itemscope="" itemtype="http://schema.org/Article">
+        <h1 itemprop="name"><a itemprop="url" href="#">Tổng hợp ảnh vui về lập trình viên</a></h1>
+
+        <a href="#"><img itemprop="image" src="~/client-side/images/anh-vui-thumb.png" title="Tổng hợp ảnh vui về lập trình viên" alt="Tổng hợp ảnh vui về lập trình viên" class="post_thumbnail"></a>
+
+        <div class="excerpt" itemprop="description">
+            Dân IT không phải là những người suốt ngày ngồi máy tính, họ còn vô cùng hài hước nữa nhé. Đây là tổng hợp các ảnh rất vui nhộn về đời sống dân IT trên fanpage của Lập trình cuộc sống
+        </div>
+        <div class="clear"></div>
+    </article>
+    <article class="post" itemscope="" itemtype="http://schema.org/Article">
+        <h1 itemprop="name"><a itemprop="url" href="#">CNTT thì thi khối nào? Khối D là câu trả lời</a></h1>
+
+        <a href="#"><img itemprop="image" src="~/client-side/images/tra-loi-cau-hoi-thumb.png" title="CNTT thì thi khối nào? Khối D là câu trả lời" alt="CNTT thì thi khối nào? Khối D là câu trả lời" class="post_thumbnail"></a>
+
+        <div class="excerpt" itemprop="description">
+            Thường thì các trường đại học tuyển sinh ngành công nghệ thông tin là khối A, tuy nhiên theo mình thì khối D mới là khối phù hợp nhất, tại sao không phải là khối A như chúng ta thường nghĩ?
+        </div>
+        <div class="clear"></div>
+    </article>
+    <article class="post" itemscope="" itemtype="http://schema.org/Article">
+        <h1 itemprop="name"><a itemprop="url" href="#">Hỏi như thế nào để khỏi bị chửi ngu?</a></h1>
+
+        <a href="#"><img itemprop="image" src="~/client-side/images/question.png" title="Hỏi như thế nào để khỏi bị chửi ngu?" alt="Hỏi như thế nào để khỏi bị chửi ngu?" class="post_thumbnail"></a>
+
+        <div class="excerpt" itemprop="description">
+            Muốn biết phải hỏi muốn giỏi phải học, điều này đúng, tuy nhiên hỏi như thế nào để được trả lời và không bị chửi ngu lại là vấn đề nhức nhối. Trên facebook, trên diễn đàn, đâu đâu cũng có những câu hỏi gây ức chế bực bội cho người trả lời.
+        </div>
+        <div class="clear"></div>
+    </article>
+
+
+    <div class="pagination">
+        <em>1</em>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">»</a>
+        <div class="clear"></div>
     </div>
-    <div class="col-md-3">
-        <h2>How to</h2>
-        <ul>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=398600">Add a Controller and View</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699315">Manage User Secrets using Secret Manager.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699316">Use logging to log a message.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699317">Add packages using NuGet.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699319">Target development, staging or production environment.</a></li>
-        </ul>
-    </div>
-    <div class="col-md-3">
-        <h2>Overview</h2>
-        <ul>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=518008">Conceptual overview of what is ASP.NET Core</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699320">Fundamentals of ASP.NET Core such as Startup and middleware.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=398602">Working with Data</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=398603">Security</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=699321">Client side development</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=699322">Develop on different platforms</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=699323">Read more on the documentation site</a></li>
-        </ul>
-    </div>
-    <div class="col-md-3">
-        <h2>Run &amp; Deploy</h2>
-        <ul>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=517851">Run your app</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=517853">Run tools such as EF migrations and more</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=398609">Publish to Microsoft Azure Web Apps</a></li>
-        </ul>
-    </div>
-</div>
+</section>

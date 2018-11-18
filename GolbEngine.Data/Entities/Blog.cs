@@ -21,6 +21,7 @@ namespace GolbEngine.Data.Entities
 
         [ForeignKey("CategoryId")]
         public virtual Category Category { get; set; }
+        public ICollection<BlogTag> BlogTags { get; } = new List<BlogTag>();
 
         public Blog()
         {
@@ -33,6 +34,17 @@ namespace GolbEngine.Data.Entities
             Content = content;
             Status = status;
             CategoryId = categoryId;
+            IsDeleted = false;
+        }
+
+        public Blog(int id, string title, string content, Status status, int categoryId)
+        {
+            Id = id;
+            Title = title;
+            Content = content;
+            Status = status;
+            CategoryId = categoryId;
+            IsDeleted = false;
         }
     }
 }
