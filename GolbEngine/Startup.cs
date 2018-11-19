@@ -40,7 +40,7 @@ namespace GolbEngine
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
+                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"),
                 o => o.MigrationsAssembly("GolbEngine.Data")));
 
             services.AddIdentity<AppUser, AppRole>()

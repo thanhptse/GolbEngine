@@ -3,8 +3,6 @@ using GolbEngine.Data.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -73,7 +71,7 @@ namespace GolbEngine.Data.EntityFramework
                 .AddJsonFile("appsettings.json").Build();
             var builder = new DbContextOptionsBuilder<AppDbContext>();
             var connectionString = configuration.GetConnectionString("DefaultConnection");
-            builder.UseSqlServer(connectionString);
+            builder.UseSqlite(connectionString);
             return new AppDbContext(builder.Options);
         }
     }
