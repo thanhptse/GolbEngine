@@ -39,5 +39,10 @@ namespace GolbEngine.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult Course()
+        {
+            return View();
+        }
     }
 }

@@ -3,19 +3,19 @@
     <h2>Chỉ là blog của một thằng coder</h2>
     <nav id="categories">
         <ul>
-            <li><a href="#">Video trên youtube</a></li>
-            <li><a href="#">Chuyện nghề nghiệp</a></li>
-            <li><a href="#">Chuyện lập trình</a></li>
-            <li><a href="#">Chuyện bên lề</a></li>
-            <li><a href="#">Chuyện cuộc sống</a></li>
-            <li><a href="#">Linux - ubuntu</a></li>
+            <li><a asp-controller="Category" asp-action="Index" >Video trên youtube</a></li>
+            <li><a asp-controller="Category" asp-action="Index" >Chuyện nghề nghiệp</a></li>
+            <li><a asp-controller="Category" asp-action="Index" >Chuyện lập trình</a></li>
+            <li><a asp-controller="Category" asp-action="Index" >Chuyện bên lề</a></li>
+            <li><a asp-controller="Category" asp-action="Index" >Chuyện cuộc sống</a></li>
+            <li><a asp-controller="Category" asp-action="Index" >Linux - ubuntu</a></li>
         </ul>
     </nav>
 </div>
 
 <section id="content">
     <article class="post" itemscope="" itemtype="http://schema.org/Article">
-        <h1 itemprop="name"><a itemprop="url" href="#">Apache trên centos không có quyền ghi file, dù đã chmod 777</a></h1>
+        <h1 itemprop="name"><a itemprop="url" asp-controller="Post" asp-action="Detail">Apache trên centos không có quyền ghi file, dù đã chmod 777</a></h1>
 
         <a href="#"><img itemprop="image" src="~/client-side/images/thumbnail_default.png" alt="Apache trên centos không có quyền ghi file, dù đã chmod 777" class="post_thumbnail"></a>
 
@@ -25,7 +25,7 @@
         <div class="clear"></div>
     </article>
     <article class="post" itemscope="" itemtype="http://schema.org/Article">
-        <h1 itemprop="name"><a itemprop="url" href="#">3 việc lập trình viên cần làm mỗi ngày</a></h1>
+        <h1 itemprop="name"><a itemprop="url" asp-controller="Post" asp-action="Detail">3 việc lập trình viên cần làm mỗi ngày</a></h1>
 
         <a href="#"><img itemprop="image" src="~/client-side/images/work.png" title="3 việc lập trình viên cần làm mỗi ngày" alt="3 việc lập trình viên cần làm mỗi ngày" class="post_thumbnail"></a>
 
@@ -35,7 +35,7 @@
         <div class="clear"></div>
     </article>
     <article class="post" itemscope="" itemtype="http://schema.org/Article">
-        <h1 itemprop="name"><a itemprop="url" href="#">Viết cho sinh viên IT</a></h1>
+        <h1 itemprop="name"><a itemprop="url" asp-controller="Post" asp-action="Detail">Viết cho sinh viên IT</a></h1>
 
         <a href="#"><img itemprop="image" src="~/client-side/images/web-developer.png" title="Viết cho sinh viên IT" alt="Viết cho sinh viên IT" class="post_thumbnail"></a>
 
@@ -45,7 +45,7 @@
         <div class="clear"></div>
     </article>
     <article class="post" itemscope="" itemtype="http://schema.org/Article">
-        <h1 itemprop="name"><a itemprop="url" href="#">Review các IT blogger khét tiếng ở Việt Nam</a></h1>
+        <h1 itemprop="name"><a itemprop="url" asp-controller="Post" asp-action="Detail">Review các IT blogger khét tiếng ở Việt Nam</a></h1>
 
         <a href="#"><img itemprop="image" src="~/client-side/images/blog-thumb.png" title="Review các IT blogger khét tiếng ở Việt Nam" alt="Review các IT blogger khét tiếng ở Việt Nam" class="post_thumbnail"></a>
 
@@ -56,7 +56,7 @@
         <div class="clear"></div>
     </article>
     <article class="post" itemscope="" itemtype="http://schema.org/Article">
-        <h1 itemprop="name"><a itemprop="url" href="#">Làm app android chỉ bằng html, css và javascript thuần, phần một - Viết code javascript</a></h1>
+        <h1 itemprop="name"><a itemprop="url" asp-controller="Post" asp-action="Detail">Làm app android chỉ bằng html, css và javascript thuần, phần một - Viết code javascript</a></h1>
 
         <a href="#"><img itemprop="image" src="~/client-side/images/mobile-app.png" title="Làm app android chỉ bằng html, css và javascript thuần, phần một - Viết code javascript" alt="Làm app android chỉ bằng html, css và javascript thuần, phần một - Viết code javascript" class="post_thumbnail"></a>
 

@@ -7,31 +7,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <![endif]-->
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>@ViewData["Title"]</title>
-    <meta name="description" content="@ViewData["MetaKeyword"]">
-    <meta name="keywords" content="@ViewData["MetaDescription"]" />
+    <title>Golb</title>
+    <meta name="description" content="Golb">
+    <meta name="keywords" content="Golb" />
 
     <!-- Mobile specific metas  -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicons Icon -->
-    <link rel="shortcut icon" type="image/x-icon" href="#">
+    <link rel="shortcut icon" type="image/x-icon" href="~/client-side/images/favicon.ico">
     <!-- CSS Style -->
     <link rel="stylesheet" href="~/client-side/css/style.css">
+    <script src="~/client-app/shared/golb.js"></script>
 </head>
 
 <body>
     <header id="header">
         <div id="logo">
-            <h1><a href="#">Lập trình cuộc sống</a></h1>
+            <h1><a asp-controller="Home" asp-action="Index">Golb</a></h1>
         </div>
         <ul>
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Khóa học</a></li>
-            <li><a href="#">Bài viết hay</a></li>
-            <li><a href="#">Tác giả</a></li>
-            <li><a target="_blank" href="#">Fan page</a></li>
-            <li><a target="_blank" href="#">Youtube</a></li>
+            <li><a asp-controller="Home" asp-action="Index" >Trang chủ</a></li>
+            <li><a asp-controller="Home" asp-action="Course">Khóa học</a></li>
+            <li><a asp-controller="Post" asp-action="GoodPost">Bài viết hay</a></li>
+            <li><a asp-controller="Home" asp-action="About" >Tác giả</a></li>
+            <li><a target="_blank" href="https://www.facebook.com/thanhptse" rel="noopener">Fan page</a></li>
+            <li><a target="_blank" href="https://www.youtube.com/trungthanhbp?sub_confirmation=1" rel="noopener">Youtube</a></li>
         </ul>
         <div class="clear"></div>
     </header>
