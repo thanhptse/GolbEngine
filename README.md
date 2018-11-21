@@ -1,6 +1,6 @@
-
-Links: https://sd2914.azurewebsites.net
-Links admin: https://sd2914.azurewebsites.net/admin (admin/123Abc$#)
+## Note:
+- Link blog: https://sd2914.azurewebsites.net
+- Link admin panel: https://sd2914.azurewebsites.net/admin (admin/123Abc$#)
 
 ## Some functions for Admin:
 - Add, update blog
