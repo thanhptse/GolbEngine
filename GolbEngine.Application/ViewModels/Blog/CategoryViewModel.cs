@@ -13,6 +13,7 @@ namespace GolbEngine.Application.ViewModels.Blog
         public bool IsDeleted { get; set; }
         public DateTime DateCreated { get; set; }
         public DateTime DateModified { get; set; }
+        public int Order { get; set; }
         public ICollection<BlogViewModel> Blogs { get; set; }
     }
 }

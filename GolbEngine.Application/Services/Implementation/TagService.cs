@@ -11,27 +11,26 @@ using System.Text;
 
 namespace GolbEngine.Application.Services.Implementation
 {
-    public class CategoryService : ICategoryService
+    public class TagService : ITagService
     {
-        private readonly IRepository<Category, int> _categoryRepository;
+        private readonly IRepository<Tag, string> _tagRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public CategoryService(IRepository<Category, int> categoryRepository,
+        public TagService(IRepository<Tag, string> tagRepository,
             IUnitOfWork unitOfWork)
         {
-            _categoryRepository = categoryRepository;
+            _tagRepository = tagRepository;
             _unitOfWork = unitOfWork;
         }
 
-        public List<CategoryViewModel> GetAll()
+        public List<TagViewModel> GetAll()
         {
-            return _categoryRepository.FindAll().OrderBy(x => x.Order)
-                 .ProjectTo<CategoryViewModel>().ToList();
+            return _tagRepository.FindAll().ProjectTo<TagViewModel>().ToList();
         }
 
-        public CategoryViewModel GetById(int id)
+        public TagViewModel GetById(string id)
         {
-            return Mapper.Map<Category, CategoryViewModel>(_categoryRepository.FindById(id));
+            return Mapper.Map<Tag, TagViewModel>(_tagRepository.FindById(id));
         }
 
 

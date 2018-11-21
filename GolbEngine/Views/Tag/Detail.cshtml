@@ -1,14 +1,14 @@
-﻿@model CategoryDetailViewModel
+﻿@model TagDetailViewModel
 @{
     ViewData["Title"] = "The Golb";
-    ViewData["MetaDescription"] = "Category detail";
+    ViewData["MetaDescription"] = "Tag detail";
 }
 
 <section id="content">
     <div id="index">
         <div class="category_detail">
-            <h1>@Model.Category.Name</h1>
-            <p>@Model.Category.Description</p>
+            <h1>@Model.Tag.Name</h1>
+            <p>@Model.Tag.Description</p>
         </div>
 
         @foreach (var blog in Model.Blogs)

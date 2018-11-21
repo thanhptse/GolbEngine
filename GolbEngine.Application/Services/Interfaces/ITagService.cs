@@ -5,11 +5,11 @@ using System.Text;
 
 namespace GolbEngine.Application.Services.Interfaces
 {
-    public interface ICategoryService
+    public interface ITagService
     {
-        List<CategoryViewModel> GetAll();
+        List<TagViewModel> GetAll();
 
-        CategoryViewModel GetById(int id);
+        TagViewModel GetById(string id);
 
         void Save();
     }

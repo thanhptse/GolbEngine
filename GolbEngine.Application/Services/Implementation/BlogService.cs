@@ -70,7 +70,17 @@ namespace GolbEngine.Application.Services.Implementation
         public List<BlogViewModel> GetAll()
         {
             return _blogRepository.FindAll(c => c.BlogTags)
-                .ProjectTo<BlogViewModel>().ToList();
+                .ProjectTo<BlogViewModel>().OrderByDescending(x => x.DateCreated).ToList();
+        }
+
+        public List<BlogViewModel> GetGoodPost()
+        {
+            return _blogRepository.FindAll(x => x.HotFlag == true).ProjectTo<BlogViewModel>().OrderByDescending(x => x.ViewCount).ToList();
+        }
+
+        public List<BlogViewModel> GetBlogByCategoryId(int categoryId)
+        {
+            return _blogRepository.FindAll(x => x.CategoryId == categoryId).OrderByDescending(x => x.DateCreated).ProjectTo<BlogViewModel>().ToList();
         }
 
         public PagedResult<BlogViewModel> GetAllPaging(int? categoryId, string keyword, int page, int pageSize)
@@ -117,7 +127,7 @@ namespace GolbEngine.Application.Services.Implementation
             return query.ToList();
         }
 
-        public List<BlogViewModel> GetHotProduct(int top)
+        public List<BlogViewModel> GetHotBlog(int top)
         {
             return _blogRepository.FindAll(x => x.Status == Status.Active && x.HotFlag == true)
                 .OrderByDescending(x => x.DateCreated)
@@ -142,6 +152,23 @@ namespace GolbEngine.Application.Services.Implementation
             var model = query
                 .ProjectTo<BlogViewModel>();
             return model.ToList();
+        }
+
+        public List<TagViewModel> GetBlogTags(int blogid)
+        {
+            var tags = _tagRepository.FindAll();
+            var blogTags = _blogTagRepository.FindAll();
+
+            var query = from t in tags
+                        join pt in blogTags
+                        on t.Id equals pt.TagId
+                        where pt.BlogId == blogid
+                        select new TagViewModel()
+                        {
+                            Id = t.Id,
+                            Name = t.Name
+                        };
+            return query.ToList();
         }
 
         public List<BlogViewModel> GetListPaging(int page, int pageSize, string sort, out int totalRow)
@@ -171,12 +198,20 @@ namespace GolbEngine.Application.Services.Implementation
             return _tagRepository.FindAll(x => searchText.Contains(x.Name)).ProjectTo<TagViewModel>().ToList();
         }
 
-        public List<TagViewModel> GetListTagById(int id)
+        public List<BlogViewModel> GetListByTagId(string tagId)
         {
-            throw new NotImplementedException();
+            var query = from p in _blogRepository.FindAll()
+                        join pt in _blogTagRepository.FindAll()
+                        on p.Id equals pt.BlogId
+                        where pt.TagId == tagId && p.Status == Status.Active
+                        orderby p.DateCreated descending
+                        select p;
+
+            var model = query.ProjectTo<BlogViewModel>();
+            return model.ToList();
         }
 
-        public List<BlogViewModel> GetReatedBlogs(int id, int top)
+        public List<BlogViewModel> GetReatedBlogs(int top)
         {
             return _blogRepository.FindAll(x => x.Status == Status.Active).OrderByDescending(x => x.DateCreated)
                 .Take(top).ProjectTo<BlogViewModel>().ToList();
@@ -227,7 +262,17 @@ namespace GolbEngine.Application.Services.Implementation
 
         public void Update(BlogViewModel blog)
         {
-            _blogRepository.Update(Mapper.Map<BlogViewModel, Blog>(blog));
+            Blog tmpBlog = _blogRepository.FindById(blog.Id);
+            tmpBlog.HotFlag = blog.HotFlag;
+            tmpBlog.Name = blog.Name;
+            tmpBlog.Image = blog.Image;
+            tmpBlog.Description = blog.Description;
+            tmpBlog.Content = blog.Content;
+            tmpBlog.Status = blog.Status;
+            tmpBlog.CategoryId = blog.CategoryId;
+            tmpBlog.Tags = blog.Tags;
+
+            _blogRepository.Update(tmpBlog);
             if (!string.IsNullOrEmpty(blog.Tags))
             {
                 string[] tags = blog.Tags.Split(',');

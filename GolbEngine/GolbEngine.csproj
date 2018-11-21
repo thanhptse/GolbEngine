@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Services\**" />
+    <Compile Remove="wwwroot\bundled\**" />
+    <Content Remove="Services\**" />
+    <Content Remove="wwwroot\bundled\**" />
+    <EmbeddedResource Remove="Services\**" />
+    <EmbeddedResource Remove="wwwroot\bundled\**" />
+    <None Remove="Services\**" />
+    <None Remove="wwwroot\bundled\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Properties\PublishProfiles\FolderProfile.pubxml" />
   </ItemGroup>
 
@@ -32,13 +43,11 @@
     <Folder Include="Logs\" />
     <Folder Include="Middleware\" />
     <Folder Include="Properties\PublishProfiles\" />
-    <Folder Include="Services\" />
     <Folder Include="wwwroot\admin-side\images\" />
     <Folder Include="wwwroot\client-side\css\" />
     <Folder Include="wwwroot\client-side\js\" />
     <Folder Include="wwwroot\client-side\fonts\" />
     <Folder Include="wwwroot\client-side\images\" />
-    <Folder Include="wwwroot\bundled\" />
   </ItemGroup>
 
 </Project>

@@ -5,14 +5,29 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using GolbEngine.Models;
+using GolbEngine.Application.Services.Interfaces;
+using GolbEngine.Application.ViewModels.Blog;
 
 namespace GolbEngine.Controllers
 {
     public class HomeController : Controller
     {
+        private IBlogService _blogService;
+        private ICategoryService _categoryService;
+
+        public HomeController(IBlogService blogService, ICategoryService categoryService)
+        {
+            _blogService = blogService;
+            _categoryService = categoryService;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            HomeViewModel model = new HomeViewModel();
+            model.Blogs = _blogService.GetAll();
+            model.Categoris = _categoryService.GetAll();
+
+            return View(model);
         }
 
         public IActionResult About()

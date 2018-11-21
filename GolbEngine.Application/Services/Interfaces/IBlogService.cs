@@ -16,7 +16,7 @@ namespace GolbEngine.Application.Services.Interfaces
 
         List<BlogViewModel> GetAll();
 
-        List<BlogViewModel> GetHotProduct(int top);
+        List<BlogViewModel> GetHotBlog(int top);
 
         PagedResult<BlogViewModel> GetAllPaging(int? categoryId, string keyword, int pageSize, int page);
 
@@ -28,13 +28,13 @@ namespace GolbEngine.Application.Services.Interfaces
 
         List<BlogViewModel> GetList(string keyword);
 
-        List<BlogViewModel> GetReatedBlogs(int id, int top);
+        List<BlogViewModel> GetReatedBlogs(int top);
 
         BlogViewModel GetById(int id);
 
         void Save();
 
-        List<TagViewModel> GetListTagById(int id);
+        List<BlogViewModel> GetListByTagId(string tagId);
 
         TagViewModel GetTag(string tagId);
 
@@ -43,5 +43,11 @@ namespace GolbEngine.Application.Services.Interfaces
         List<BlogViewModel> GetListByTag(string tagId, int page, int pagesize, out int totalRow);
 
         List<TagViewModel> GetListTag(string searchText);
+
+        List<TagViewModel> GetBlogTags(int blogid);
+
+        List<BlogViewModel> GetBlogByCategoryId(int categoryId);
+
+        List<BlogViewModel> GetGoodPost();
     }
 }

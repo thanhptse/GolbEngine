@@ -76,6 +76,7 @@ namespace GolbEngine
             services.AddTransient<IRoleService, RoleService>();
             services.AddTransient<IBlogService, BlogService>();
             services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<ITagService, TagService>();
 
             services.AddTransient<IAuthorizationHandler, BaseResourceAuthorizationHandler>();
         }

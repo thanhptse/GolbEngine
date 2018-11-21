@@ -161,6 +161,8 @@ namespace GolbEngine.Data.Migrations
 
                     b.Property<string>("Name");
 
+                    b.Property<int>("Order");
+
                     b.Property<int?>("OwnerIdId");
 
                     b.HasKey("Id");
@@ -203,6 +205,8 @@ namespace GolbEngine.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(50)
                         .IsUnicode(false);
+
+                    b.Property<string>("Description");
 
                     b.Property<string>("Name")
                         .IsRequired()

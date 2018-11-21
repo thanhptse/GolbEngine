@@ -24,7 +24,7 @@ namespace GolbEngine.Application.ViewModels.Blog
         public int CategoryId { get; set; }
         public string Tags { get; set; }
         public int? ViewCount { set; get; }
-        public bool? HomeFlag { set; get; }
+        public bool? HotFlag { set; get; }
         public CategoryViewModel Category { get; set; }
     }
 }

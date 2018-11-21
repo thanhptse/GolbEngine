@@ -1,90 +1,46 @@
-﻿<section id="content">
+﻿@model BlogDetailViewModel
+@{
+    ViewData["Title"] = "The Golb";
+    ViewData["MetaDescription"] = "Category detail";
+}
+<section id="content">
     <article class="post post-detail noselect" itemscope="">
-        <h1 itemprop="name">Giới thiệu fluent interface - một cách để code dễ đọc hơn</h1>
+        <h1 itemprop="name">@Model.Blog.Name</h1>
 
         <div class="post-body" itemprop="articleBody">
-            <p>Fluent interface được đặt ra bởi Eric Evans và Martin Fowler, là sự mở rộng của kỹ thuật “Lời gọi theo chuỗi” (method chaining) nhằm làm cho mã lập trình dễ đọc hơn. Method chaining là một kỹ thuật về cú pháp chung cho cách gọi nhiều lần tới các hàm khác trong lập trình hướng đối tượng.</p>
-            <p>Cái đống bùi nhùi ở trên là lý thuyết rất là hàn lâm và khó hiểu :smile: . Để dễ hiểu hơn chúng ta sẽ đi thẳng vào ví dụ cho nó trực quan nhé. Chắc hẳn trong khi hành tẩu giang hồ, quý đồng đạo đã từng thấy đâu đó những đoạn code rất đẹp đẽ kiểu như thế này:</p>
-            <div class="language-javascript highlighter-rouge">
-                <div class="highlight">
-                    <pre class="highlight">
-                    <code><span class="nx">$person</span><span class="o">-&gt;</span><span class="nx">setName</span><span class="p">(</span><span class="s1">'Tùng'</span><span class="p">)</span>
-                    <span class="o">-&gt;</span><span class="nx">setAge</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
-                    <span class="o">-&gt;</span><span class="nx">showInfo</span><span class="p">();</span>
-                        </code>
-                    </pre>
-                </div>
-            </div>
-            <p>Hoặc thân thuộc nhất là trong jquery:</p>
-            <div class="language-javascript highlighter-rouge">
-                <div class="highlight">
-                    <pre class="highlight">
-                    <code><span class="nx">$</span><span class="p">(</span><span class="s1">'#element'</span><span class="p">).</span><span class="nx">first</span><span class="p">()</span>
-                    <span class="p">.</span><span class="nx">slideDown</span><span class="p">()</span>
-                    <span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
-                        </code>
-                    </pre>
-                </div>
-            </div>
-            <p>Như các bạn thấy, các hàm của một đối tượng được gọi một cách liên tục, làm cho code dễ đọc dễ hiểu hơn rất nhiều. Vậy làm thế nào để được như vậy? Rất đơn giản, bạn chỉ cần trả về chính object hiện tại (<code class="highlighter-rouge">return this</code>) để sẵn sàng cho lời gọi tiếp theo. Cụ thể ở ví dụ đầu tiên, chúng ta sẽ viết như thế này:</p>
-            <div class="language-javascript highlighter-rouge">
-                <div class="highlight">
-                    <pre class="highlight">
-                    <code>hihi this is some of code
-                        </code>
-                    </pre>
-                </div>
-            </div>
-            <p>Đến đây mọi chuyện đã sáng tỏ, chẳng có gì cao siêu ở đây cả, sau đây mình sẽ giới thiệu 3 đặc điểm của fluent interface:</p>
-            <p><strong>Đặc điểm 1</strong>: Định nghĩa thông qua việc trả về một đối tượng object là chính nó, chính là cái <code class="highlighter-rouge">return this</code> mà mình nói ở trên.</p>
-            <p><strong>Đặc điểm 2</strong>: Kết quả trả về của một chuỗi lời gọi hàm là kết quả trả về của hàm cuối cùng.</p>
-            <div class="language-javascript highlighter-rouge">
-                <div class="highlight">
-                    <pre class="highlight">
-                    <code><span class="nx">$name</span> <span class="o">=</span> <span class="nx">$person</span><span class="o">-&gt;</span><span class="nx">setName</span><span class="p">(</span><span class="s1">'Tùng'</span><span class="p">)</span><span class="o">-&gt;</span><span class="nx">setAge</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">-&gt;</span><span class="nx">getName</span><span class="p">();</span>
-                        </code>
-                    </pre>
-                </div>
-            </div>
-            <p><strong>Đặc điểm 3</strong>: Kết thúc khi gặp hàm không trả về:</p>
-            <div class="language-javascript highlighter-rouge">
-                <div class="highlight">
-                    <pre class="highlight">
-                    <code><span class="nx">$person</span><span class="o">-&gt;</span><span class="nx">setName</span><span class="p">();</span> <span class="c1">// kết thúc</span>
-                    </code>
-                    </pre>
-                </div>
-            </div>
-            <p>Thực sự nó rất đơn giản và đang được sử dụng rộng rãi, nhưng mình vẫn muốn viết ra, hi vọng giúp được gì đó cho các bạn, đặc biệt các bạn mới học.</p>
+            @Html.Raw(Model.Blog.Content)
             <div>
                 Tag:
-                <a href="#" target="_blank">Bí quyết học lập trình</a>,
-                <a href="#" target="_blank">học lập trình như thế nào</a>,
+                @foreach (var tag in Model.Tags)
+                {
+                    <a asp-controller="Tag" asp-action="Detail" asp-route-tagId="@tag.Id">@tag.Name</a><text>, </text>
+                }
+
             </div>
             <div>
                 Category:
-                <a asp-controller="Category" asp-action="Index">Chuyện lập trình</a>,
+                <a asp-controller="Category" asp-action="Detail" asp-route-categoryId="@Model.Category.Id">@Model.Category.Name</a>,
             </div>
         </div>
     </article>
 
 
     <ul class="related_posts">
-        <li>
-            <a asp-controller="Post" asp-action="Detail"><img src="~/client-side/images/lap-trinh-vien-thumb.jpg" alt="Cùng nhau tạo restful API đơn giản với php"></a>
-            <h3><a asp-controller="Post" asp-action="Detail" title="Cùng nhau tạo restful API đơn giản với php" >Cùng nhau tạo restful API đơn giản với php</a></h3>
-        </li>
-        <li>
-            <a asp-controller="Post" asp-action="Detail"><img src="~/client-side/images/linux-thumb.png" alt="Tôi đã hack Chợ Tốt như thế nào"></a>
-            <h3><a asp-controller="Post" asp-action="Detail" title="Tôi đã hack Chợ Tốt như thế nào">Tôi đã hack Chợ Tốt như thế nào</a></h3>
-        </li>
-        <li>
-            <a asp-controller="Post" asp-action="Detail"><img src="~/client-side/images/blog-thumb.png" alt="Tổng hợp tất tần tật những công cụ cần thiết cho web developer"></a>
-            <h3><a asp-controller="Post" asp-action="Detail" title="Tổng hợp tất tần tật những công cụ cần thiết cho web developer">Tổng hợp tất tần tật những công cụ cần thiết cho web developer</a></h3>
-        </li>
-        <li>
-            <a asp-controller="Post" asp-action="Detail"><img src="~/client-side/images/web-developer.png" alt="Nên học ngôn ngữ lập trình nào?"></a>
-            <h3><a asp-controller="Post" asp-action="Detail" title="Nên học ngôn ngữ lập trình nào?" >Nên học ngôn ngữ lập trình nào?</a></h3>
-        </li>
+        @foreach (var blog in Model.RelatedBlogs)
+        {
+            <li>
+                <a asp-controller="Post" asp-action="Detail" asp-route-blogId="@blog.Id">
+                    @if (string.IsNullOrEmpty(blog.Image))
+                    {
+                        <img src="~/client-side/images/thumbnail_default.png" alt="@blog.Name">
+                    }
+                    else
+                    {
+                        <img src="@blog.Image" alt="@blog.Name">
+                    }
+                </a>
+                <h3><a asp-controller="Post" asp-action="Detail" asp-route-blogId="@blog.Id" title="@blog.Name">@blog.Name</a></h3>
+            </li>
+        }
     </ul>
 </section>

@@ -134,7 +134,8 @@ namespace GolbEngine.Data.Migrations
                     OwnerIdId = table.Column<int>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
                     DateCreated = table.Column<DateTime>(nullable: false),
-                    DateModified = table.Column<DateTime>(nullable: false)
+                    DateModified = table.Column<DateTime>(nullable: false),
+                    Order = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -169,7 +170,8 @@ namespace GolbEngine.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(unicode: false, maxLength: 50, nullable: false),
-                    Name = table.Column<string>(maxLength: 50, nullable: false)
+                    Name = table.Column<string>(maxLength: 50, nullable: false),
+                    Description = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

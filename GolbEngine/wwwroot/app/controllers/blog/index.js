@@ -97,7 +97,7 @@
 
             var description = $('#txtDescM').val();
 
-            //var image = $('#txtImageM').val();
+            var image = $('#txtImageM').val();
 
             var tags = $('#txtTagM').val();
 
@@ -112,7 +112,7 @@
                     Id: id,
                     Name: name,
                     CategoryId: categoryId,
-                    Image: '',
+                    Image: image,
                     Description: description,
                     Content: content,
                     HotFlag: hot,
@@ -180,7 +180,7 @@
 
                 $('#txtDescM').val(data.Description);
 
-                // $('#txtImageM').val(data.ThumbnailImage);
+                $('#txtImageM').val(data.Image);
 
                 $('#txtTagM').val(data.Tags);
 
@@ -284,9 +284,10 @@
                         Id: item.Id,
                         Name: item.Name,
                         Description: item.Description,
-                        Image: item.Image == null ? '<img src="/admin-side/images/user.png" width=25' : '<img src="' + item.Image + '" width=25 />',
+                        Image: (item.Image == null || item.Image == '') ? '<img src="/client-side/images/thumbnail_default.png" width=50/>' : '<img src="' + item.Image + '" width=50 />',
                         CategoryName: item.Category.Name,
                         CreatedDate: golb.dateTimeFormatJson(item.DateCreated),
+                        ViewCount: item.ViewCount == null ? 0 : item.ViewCount,
                         Status: golb.getStatus(item.Status)
                     });
 
@@ -295,7 +296,7 @@
                 if (render != '') {
                     $('#tbl-content').html(render);
                 } else {
-                    render = "<tr><td colspan='7'>Not found any item !!!</td></tr>";
+                    render = "<tr><td colspan='8'>Not found any item !!!</td></tr>";
                     $('#tbl-content').html(render);
                 }
 
