@@ -78,7 +78,7 @@
     dateTimeFormatJson: function (datetime) {
         if (datetime == null || datetime == '')
             return '';
-        var newdate = new Date(parseInt(datetime.substr(6)));
+        var newdate = new Date(datetime);
         var month = newdate.getMonth() + 1;
         var day = newdate.getDate();
         var year = newdate.getFullYear();
@@ -120,6 +120,21 @@
         var a = number.toFixed(precision).split('.');
         a[0] = a[0].replace(/\d(?=(\d{3})+$)/g, '$&,');
         return a.join('.');
+    },
+    unflattern: function (arr) {
+        var map = {};
+        var roots = [];
+        for (var i = 0; i < arr.length; i += 1) {
+            var node = arr[i];
+            node.children = [];
+            map[node.id] = i; // use map to look-up the parents
+            if (node.ownerId !== null) {
+                arr[map[node.parentId]].children.push(node);
+            } else {
+                roots.push(node);
+            }
+        }
+        return roots;
     }
 }
 

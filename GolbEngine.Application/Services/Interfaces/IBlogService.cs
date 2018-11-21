@@ -16,7 +16,9 @@ namespace GolbEngine.Application.Services.Interfaces
 
         List<BlogViewModel> GetAll();
 
-        PagedResult<BlogViewModel> GetAllPaging(string keyword, int pageSize, int page);
+        List<BlogViewModel> GetHotProduct(int top);
+
+        PagedResult<BlogViewModel> GetAllPaging(int? categoryId, string keyword, int pageSize, int page);
 
         List<BlogViewModel> GetLastest(int top);
 

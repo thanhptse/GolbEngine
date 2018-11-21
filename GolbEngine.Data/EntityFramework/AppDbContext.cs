@@ -9,6 +9,8 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using System.IO;
+using GolbEngine.Data.EntityFramework.Configurations;
+using GolbEngine.Data.EntityFramework.Extensions;
 
 namespace GolbEngine.Data.EntityFramework
 {
@@ -26,6 +28,7 @@ namespace GolbEngine.Data.EntityFramework
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            #region identity config
             builder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaims").HasKey(x => x.Id);
 
             builder.Entity<IdentityRoleClaim<Guid>>().ToTable("AppRoleClaims")
@@ -38,6 +41,10 @@ namespace GolbEngine.Data.EntityFramework
 
             builder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserTokens")
                .HasKey(x => new { x.UserId });
+            #endregion
+
+            builder.AddConfiguration(new TagConfiguration());
+            builder.AddConfiguration(new BlogTagConfiguration());
 
             //base.OnModelCreating(builder);
         }

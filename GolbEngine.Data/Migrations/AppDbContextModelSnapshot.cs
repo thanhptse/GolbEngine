@@ -98,11 +98,25 @@ namespace GolbEngine.Data.Migrations
 
                     b.Property<DateTime>("DateModified");
 
+                    b.Property<string>("Description")
+                        .HasMaxLength(500);
+
+                    b.Property<bool?>("HotFlag");
+
+                    b.Property<string>("Image")
+                        .HasMaxLength(256);
+
                     b.Property<bool>("IsDeleted");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(256);
 
                     b.Property<int>("Status");
 
-                    b.Property<string>("Title");
+                    b.Property<string>("Tags");
+
+                    b.Property<int?>("ViewCount");
 
                     b.HasKey("Id");
 
@@ -118,7 +132,10 @@ namespace GolbEngine.Data.Migrations
 
                     b.Property<int>("BlogId");
 
-                    b.Property<int>("TagId");
+                    b.Property<string>("TagId")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .IsUnicode(false);
 
                     b.HasKey("Id");
 
@@ -182,10 +199,14 @@ namespace GolbEngine.Data.Migrations
 
             modelBuilder.Entity("GolbEngine.Data.Entities.Tag", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .IsUnicode(false);
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50);
 
                     b.HasKey("Id");
 
@@ -283,7 +304,7 @@ namespace GolbEngine.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("GolbEngine.Data.Entities.Tag", "Tag")
-                        .WithMany("BlogTags")
+                        .WithMany()
                         .HasForeignKey("TagId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

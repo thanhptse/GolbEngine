@@ -34,8 +34,6 @@
     <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="Services\" />
     <Folder Include="wwwroot\admin-side\images\" />
-    <Folder Include="wwwroot\app\controllers\blog\" />
-    <Folder Include="wwwroot\client-app\controllers\" />
     <Folder Include="wwwroot\client-side\css\" />
     <Folder Include="wwwroot\client-side\js\" />
     <Folder Include="wwwroot\client-side\fonts\" />

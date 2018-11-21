@@ -168,9 +168,8 @@ namespace GolbEngine.Data.Migrations
                 name: "Tags",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(nullable: true)
+                    Id = table.Column<string>(unicode: false, maxLength: 50, nullable: false),
+                    Name = table.Column<string>(maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -183,13 +182,18 @@ namespace GolbEngine.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Title = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(maxLength: 256, nullable: false),
+                    Image = table.Column<string>(maxLength: 256, nullable: true),
+                    Description = table.Column<string>(maxLength: 500, nullable: true),
                     Content = table.Column<string>(nullable: true),
                     DateCreated = table.Column<DateTime>(nullable: false),
                     DateModified = table.Column<DateTime>(nullable: false),
                     Status = table.Column<int>(nullable: false),
                     IsDeleted = table.Column<bool>(nullable: false),
-                    CategoryId = table.Column<int>(nullable: false)
+                    CategoryId = table.Column<int>(nullable: false),
+                    Tags = table.Column<string>(nullable: true),
+                    ViewCount = table.Column<int>(nullable: true),
+                    HotFlag = table.Column<bool>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -209,7 +213,7 @@ namespace GolbEngine.Data.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     BlogId = table.Column<int>(nullable: false),
-                    TagId = table.Column<int>(nullable: false)
+                    TagId = table.Column<string>(unicode: false, maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {

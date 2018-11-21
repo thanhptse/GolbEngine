@@ -18,7 +18,12 @@
     <link rel="shortcut icon" type="image/x-icon" href="~/client-side/images/favicon.ico">
     <!-- CSS Style -->
     <link rel="stylesheet" href="~/client-side/css/style.css">
+    <!-- jquery js -->
+    <script type="text/javascript" src="~/client-side/js/jquery.min.js"></script>
+    <!-- bootstrap js -->
+    <script type="text/javascript" src="~/client-side/js/bootstrap.min.js"></script>
     <script src="~/client-app/shared/golb.js"></script>
+    <script src="~/client-app/controllers/base/index.js"></script>
 </head>
 
 <body>
@@ -27,10 +32,10 @@
             <h1><a asp-controller="Home" asp-action="Index">Golb</a></h1>
         </div>
         <ul>
-            <li><a asp-controller="Home" asp-action="Index" >Trang chủ</a></li>
+            <li><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
             <li><a asp-controller="Home" asp-action="Course">Khóa học</a></li>
             <li><a asp-controller="Post" asp-action="GoodPost">Bài viết hay</a></li>
-            <li><a asp-controller="Home" asp-action="About" >Tác giả</a></li>
+            <li><a asp-controller="Home" asp-action="About">Tác giả</a></li>
             <li><a target="_blank" href="https://www.facebook.com/thanhptse" rel="noopener">Fan page</a></li>
             <li><a target="_blank" href="https://www.youtube.com/trungthanhbp?sub_confirmation=1" rel="noopener">Youtube</a></li>
         </ul>
@@ -107,6 +112,12 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        var baseObj = new BaseController();
+        baseObj.initialize();
+    </script>
+    @RenderSection("Scripts", required: false)
 </body>
 
 </html>

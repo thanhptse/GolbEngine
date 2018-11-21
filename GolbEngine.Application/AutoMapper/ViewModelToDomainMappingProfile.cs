@@ -12,7 +12,8 @@ namespace GolbEngine.Application.AutoMapper
     {
         public ViewModelToDomainMappingProfile()
         {
-            CreateMap<BlogViewModel, Blog>().ConstructUsing(c => new Blog(c.Id, c.Title, c.Content, c.Status, c.CategoryId));
+            CreateMap<BlogViewModel, Blog>();
+            CreateMap<CategoryViewModel, Category>();
         }
     }
 }

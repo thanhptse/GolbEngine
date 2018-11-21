@@ -10,8 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="EntityFramework\Configurations\" />
-    <Folder Include="EntityFramework\Extensions\" />
     <Folder Include="EntityFramework\Migrations\" />
   </ItemGroup>
 

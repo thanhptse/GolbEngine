@@ -56,7 +56,7 @@ namespace GolbEngine
             Mapper.Initialize(c =>
             {
                 c.AddProfile<DomainToViewModelMappingProfile>();
-                //c.AddProfile<ViewModelToDomainMappingProfile>();
+                c.AddProfile<ViewModelToDomainMappingProfile>();
             });
 
             services.AddSingleton(s => Mapper.Instance);
@@ -75,6 +75,7 @@ namespace GolbEngine
             services.AddTransient<IFunctionService, FunctionService>();
             services.AddTransient<IRoleService, RoleService>();
             services.AddTransient<IBlogService, BlogService>();
+            services.AddTransient<ICategoryService, CategoryService>();
 
             services.AddTransient<IAuthorizationHandler, BaseResourceAuthorizationHandler>();
         }

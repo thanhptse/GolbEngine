@@ -10,9 +10,11 @@ namespace GolbEngine.Data.Entities
     public class BlogTag : DomainEntity<int>
     {
         public int BlogId { get; set; }
-        public int TagId { get; set; }
+        public string TagId { get; set; }
 
+        [ForeignKey("BlogId")]
         public virtual Blog Blog { get; set; }
+        [ForeignKey("TagId")]
         public virtual Tag Tag { get; set; }
 
         public BlogTag()
