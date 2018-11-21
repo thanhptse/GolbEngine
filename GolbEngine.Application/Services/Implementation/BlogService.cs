@@ -69,7 +69,7 @@ namespace GolbEngine.Application.Services.Implementation
 
         public List<BlogViewModel> GetAll()
         {
-            return _blogRepository.FindAll(c => c.BlogTags)
+            return _blogRepository.FindAll()
                 .ProjectTo<BlogViewModel>().OrderByDescending(x => x.DateCreated).ToList();
         }
 

@@ -187,12 +187,7 @@
     <script src="~/lib/bootbox/bootbox.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="~/admin-side/js/custom.js"></script>
-    <environment names="Development">
-        <script src="~/app/shared/golb.js" asp-append-version="true"></script>
-    </environment>
-    <environment names="Staging,Production">
-        <script src="~/bundled/site-admin.min.js"></script>
-    </environment>
+    <script src="~/app/shared/golb.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
