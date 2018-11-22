@@ -8,7 +8,7 @@
     <div id="index">
         <div class="category_detail">
             <h1>@Model.Category.Name</h1>
-            <p>@Model.Category.Description</p>
+            <p>@Html.Raw(Model.Category.Description)</p>
         </div>
 
         @foreach (var blog in Model.Blogs)

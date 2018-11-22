@@ -15293,3 +15293,50 @@ ORDER BY \"t\".\"Order\", \"t\".\"Id\"" (0723d8ff)
 2018-11-22T06:05:54.2423420+07:00 0HLIG0N4M8Q8O:00000005 [INF] Executed ViewResult - view "Index" executed in 1.8408ms. (f66409e9)
 2018-11-22T06:05:54.2441759+07:00 0HLIG0N4M8Q8O:00000005 [INF] Executed action "GolbEngine.Controllers.HomeController.Index (GolbEngine)" in 19.6482ms (afa2e885)
 2018-11-22T06:05:54.2486221+07:00 0HLIG0N4M8Q8O:00000005 [INF] Request finished in 26.5682ms 200 text/html; charset=utf-8 (791a596a)
+2018-11-22T07:00:49.7321784+07:00 0HLIG1M7SEM4J:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44302/   (ca22a1cb)
+2018-11-22T07:00:49.7321784+07:00 0HLIG1M7SEM4I:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:51980/  0 (ca22a1cb)
+2018-11-22T07:00:49.7654053+07:00 0HLIG1M7SEM4I:00000001 [INF] Request finished in 33.4244ms 200  (791a596a)
+2018-11-22T07:00:49.8804924+07:00 0HLIG1M7SEM4J:00000001 [INF] Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing action "GolbEngine.Controllers.HomeController.Index (GolbEngine)" (a44c0341)
+2018-11-22T07:00:49.8925226+07:00 0HLIG1M7SEM4J:00000001 [INF] Executing action method "GolbEngine.Controllers.HomeController.Index (GolbEngine)" - Validation state: Valid (dad538d7)
+2018-11-22T07:00:49.8963808+07:00 0HLIG1M7SEM4J:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "MigrationsAssembly=GolbEngine.Data " (9958f5bb)
+2018-11-22T07:00:50.1157290+07:00 0HLIG1M7SEM4J:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2018-11-22T07:00:50.1261711+07:00 0HLIG1M7SEM4J:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN \"dtoBlog\".\"CategoryId\" IS NULL
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END, \"dtoBlog.Category\".\"DateCreated\", \"dtoBlog.Category\".\"DateModified\", \"dtoBlog.Category\".\"Description\", \"dtoBlog\".\"CategoryId\", \"dtoBlog.Category\".\"IsDeleted\", \"dtoBlog.Category\".\"Name\", \"dtoBlog.Category\".\"Order\", \"dtoBlog\".\"Content\", \"dtoBlog\".\"DateCreated\" AS \"DateCreated0\", \"dtoBlog\".\"DateModified\" AS \"DateModified0\", \"dtoBlog\".\"Description\" AS \"Description0\", \"dtoBlog\".\"HotFlag\", \"dtoBlog\".\"Id\", \"dtoBlog\".\"Image\", \"dtoBlog\".\"IsDeleted\" AS \"IsDeleted0\", \"dtoBlog\".\"Name\" AS \"Name0\", \"dtoBlog\".\"Status\", \"dtoBlog\".\"Tags\", \"dtoBlog\".\"ViewCount\", \"dtoBlog.Category\".\"Id\"
+FROM \"Blogs\" AS \"dtoBlog\"
+INNER JOIN \"Categories\" AS \"dtoBlog.Category\" ON \"dtoBlog\".\"CategoryId\" = \"dtoBlog.Category\".\"Id\"
+ORDER BY \"DateCreated0\" DESC, \"dtoBlog\".\"Id\", \"dtoBlog.Category\".\"Id\"" (0723d8ff)
+2018-11-22T07:00:50.1412824+07:00 0HLIG1M7SEM4J:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"DateCreated\", \"t\".\"Id\", \"t\".\"Id0\", \"dtoBlog.Category.Blogs\".\"CategoryId\", \"dtoBlog.Category.Blogs\".\"Content\", \"dtoBlog.Category.Blogs\".\"DateCreated\" AS \"DateCreated0\", \"dtoBlog.Category.Blogs\".\"DateModified\", \"dtoBlog.Category.Blogs\".\"Description\", \"dtoBlog.Category.Blogs\".\"HotFlag\", \"dtoBlog.Category.Blogs\".\"Id\" AS \"Id1\", \"dtoBlog.Category.Blogs\".\"Image\", \"dtoBlog.Category.Blogs\".\"IsDeleted\", \"dtoBlog.Category.Blogs\".\"Name\", \"dtoBlog.Category.Blogs\".\"Status\", \"dtoBlog.Category.Blogs\".\"Tags\", \"dtoBlog.Category.Blogs\".\"ViewCount\"
+FROM \"Blogs\" AS \"dtoBlog.Category.Blogs\"
+INNER JOIN (
+    SELECT \"dtoBlog0\".\"DateCreated\", \"dtoBlog0\".\"Id\", \"dtoBlog.Category0\".\"Id\" AS \"Id0\"
+    FROM \"Blogs\" AS \"dtoBlog0\"
+    INNER JOIN \"Categories\" AS \"dtoBlog.Category0\" ON \"dtoBlog0\".\"CategoryId\" = \"dtoBlog.Category0\".\"Id\"
+) AS \"t\" ON \"dtoBlog.Category.Blogs\".\"CategoryId\" = \"t\".\"Id0\"
+ORDER BY \"t\".\"DateCreated\" DESC, \"t\".\"Id\", \"t\".\"Id0\"" (0723d8ff)
+2018-11-22T07:00:50.1661881+07:00 0HLIG1M7SEM4J:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2018-11-22T07:00:50.1678251+07:00 0HLIG1M7SEM4J:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"DateCreated\", \"x\".\"DateModified\", \"x\".\"Description\", \"x\".\"Id\", \"x\".\"IsDeleted\", \"x\".\"Name\", \"x\".\"Order\"
+FROM \"Categories\" AS \"x\"
+ORDER BY \"x\".\"Order\", \"x\".\"Id\"" (0723d8ff)
+2018-11-22T07:00:50.1724452+07:00 0HLIG1M7SEM4J:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Order\", \"t\".\"Id\", \"x.Blogs\".\"CategoryId\", \"x.Blogs\".\"Content\", \"x.Blogs\".\"DateCreated\", \"x.Blogs\".\"DateModified\", \"x.Blogs\".\"Description\", \"x.Blogs\".\"HotFlag\", \"x.Blogs\".\"Id\" AS \"Id0\", \"x.Blogs\".\"Image\", \"x.Blogs\".\"IsDeleted\", \"x.Blogs\".\"Name\", \"x.Blogs\".\"Status\", \"x.Blogs\".\"Tags\", \"x.Blogs\".\"ViewCount\"
+FROM \"Blogs\" AS \"x.Blogs\"
+INNER JOIN (
+    SELECT \"x0\".\"Order\", \"x0\".\"Id\"
+    FROM \"Categories\" AS \"x0\"
+) AS \"t\" ON \"x.Blogs\".\"CategoryId\" = \"t\".\"Id\"
+ORDER BY \"t\".\"Order\", \"t\".\"Id\"" (0723d8ff)
+2018-11-22T07:00:50.1809136+07:00 0HLIG1M7SEM4J:00000001 [INF] Executed action method "GolbEngine.Controllers.HomeController.Index (GolbEngine)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 284.6567ms. (50a9e262)
+2018-11-22T07:00:50.1983038+07:00 0HLIG1M7SEM4J:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-11-22T07:00:50.2784035+07:00 0HLIG1M7SEM4J:00000001 [INF] Executed ViewResult - view "Index" executed in 88.7617ms. (f66409e9)
+2018-11-22T07:00:50.2806192+07:00 0HLIG1M7SEM4J:00000001 [INF] Executed action "GolbEngine.Controllers.HomeController.Index (GolbEngine)" in 397.9996ms (afa2e885)
+2018-11-22T07:00:50.2885114+07:00 0HLIG1M7SEM4J:00000001 [INF] Request finished in 561.5409ms 200 text/html; charset=utf-8 (791a596a)
+2018-11-22T07:00:50.3088080+07:00 0HLIG1M7SEM4I:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44302/client-app/shared/golb.js   (ca22a1cb)
+2018-11-22T07:00:50.3144773+07:00 0HLIG1M7SEM4I:00000002 [INF] The file "/client-app/shared/golb.js" was not modified (f1f8d725)
+2018-11-22T07:00:50.3173808+07:00 0HLIG1M7SEM4I:00000002 [INF] Request finished in 8.386ms 304 application/javascript (791a596a)
